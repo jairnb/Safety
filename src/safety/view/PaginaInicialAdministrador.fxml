@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="PaginaIniciaAnchorPane" prefHeight="700.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="safety.controller.PaginaInicialAdministradorController">
+    <stylesheets>
+        <URL value="@/safety/content/app.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane fx:id="topBarAnchorPane" prefHeight="50.0" prefWidth="1200.0" style="-fx-border-width: 0 0 1 0; -fx-border-color: grey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label contentDisplay="CENTER" layoutX="50.0" layoutY="9.0" prefHeight="32.0" prefWidth="117.0" style="-fx-font-size: 20;" stylesheets="@../../../../../../Desktop/NetBeansProjects/SistemaSegurancaEdificios/src/sistemasegurancaedificios/content/app.css" text="SAFETY" AnchorPane.leftAnchor="50.0" />
+            <MenuButton layoutX="1138.0" layoutY="10.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="51.0" style="-fx-background-color: #00AFF0;" textFill="#00aff0" AnchorPane.rightAnchor="20.0">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" size="15" wrappingWidth="19.0" />
+               </graphic>
+            </MenuButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="menuAnchorPane" layoutY="50.0" prefHeight="650.0" prefWidth="200.0" style="-fx-background-color: #00AFF0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <JFXButton buttonType="RAISED" onAction="#paginaInicialAdminClicked" prefHeight="40.0" prefWidth="200.0" text="Pagina Inicial" textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutY="300.0" prefHeight="40.0" prefWidth="200.0" text="Utilizadores  " textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutY="250.0" prefHeight="40.0" prefWidth="200.0" ripplerFill="#d72c2c" text="Sevicos        " textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <MaterialDesignIconView fill="WHITE" glyphName="HOME" layoutX="12.0" layoutY="31.0" size="30" />
+            <MaterialDesignIconView fill="WHITE" layoutX="12.0" layoutY="81.0" size="30" />
+            <JFXButton buttonType="RAISED" layoutY="100.0" onAction="#funcionarioClicked" prefHeight="40.0" prefWidth="200.0" text="Funcionarios" textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutY="50.0" prefHeight="40.0" prefWidth="200.0" text="Contratos     " textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <MaterialDesignIconView fill="WHITE" layoutX="12.0" layoutY="131.0" size="30" />
+            <MaterialDesignIconView fill="WHITE" layoutX="12.0" layoutY="181.0" size="30" />
+            <MaterialDesignIconView fill="WHITE" layoutX="12.0" layoutY="231.0" size="30" />
+            <MaterialDesignIconView fill="WHITE" layoutX="12.0" layoutY="281.0" size="30" />
+            <MaterialDesignIconView fill="WHITE" layoutX="12.0" layoutY="331.0" size="30" />
+            <JFXButton buttonType="RAISED" layoutY="150.0" prefHeight="40.0" prefWidth="200.0" text="Clientes        " textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutY="200.0" prefHeight="40.0" prefWidth="200.0" text="Turnos         " textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="conteudosAnchorPane" layoutX="200.0" layoutY="50.0" prefHeight="650.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+   </children>
+</AnchorPane>
