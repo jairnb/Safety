@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -31,6 +32,7 @@ public class PaginaInicialAdministradorController implements Initializable {
     @FXML
     private AnchorPane conteudosAnchorPane;
     
+   private Button btn;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          try {
@@ -44,7 +46,7 @@ public class PaginaInicialAdministradorController implements Initializable {
     
     public void paginaInicialAdminClicked() throws IOException  {
         AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/safety/view/ConteudosInicialAdminAnchorPane.fxml"));
-        conteudosAnchorPane.getChildren().setAll(a);
+        conteudosAnchorPane.getChildren().setAll(a);        
     }
     
     public void funcionarioClicked() throws IOException  {
@@ -52,6 +54,12 @@ public class PaginaInicialAdministradorController implements Initializable {
         conteudosAnchorPane.getChildren().setAll(a);
     }
     
+    
+//    btn.setOnKeyPressed(e -> {
+//            if(e.getCode() == KeyCode.ENTER){
+//                
+//            }
+//        });
     public void clienteoClicked() throws IOException{
         AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/safety/view/Cliente.fxml"));
         conteudosAnchorPane.getChildren().setAll(a);

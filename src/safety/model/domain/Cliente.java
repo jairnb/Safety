@@ -11,6 +11,7 @@ private String sobrenome;
 private int nif;
 private int telefone;
 private String email;
+private Funcionario funcionario;
 
 //todos os metos geters e seters da classe cliente
     public int getId_cliente() {
@@ -59,6 +60,14 @@ private String email;
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
     }
     
     

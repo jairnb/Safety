@@ -17,7 +17,7 @@ public class FuncionarioDAO {
     PreparedStatement ps = null;
     ResultSet result = null;
 
-   /* public Funcionario selecionarFuncionario(Funcionario funcionario) {
+    public Funcionario selecionarFuncionario(Funcionario funcionario) {
 
         String sql = "SELECT * FROM funcionario_tbl where id_funcionario=?";
         try {
@@ -46,7 +46,7 @@ public class FuncionarioDAO {
         }
 
         return null;
-    }*/
+    }
 
     public List<Funcionario> listarFuncionario() {
 

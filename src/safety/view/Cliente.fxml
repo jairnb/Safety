@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import java.net.URL?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1000" styleClass="mainFxmlClass" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="safety.controller.ClienteController">
@@ -11,22 +14,50 @@
         <URL value="@/safety/content/app.css" />
     </stylesheets>
    <children>
-      <TreeTableView layoutX="-9.0" layoutY="69.0" prefHeight="650.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.0">
+      <AnchorPane prefHeight="50.0" prefWidth="1000.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="898.0" layoutY="13.0" style="-fx-background-color: #00AFF0;" text="Adicionar Cliente" textFill="WHITE" AnchorPane.rightAnchor="30.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <TextField layoutX="14.0" layoutY="13.0" promptText="Pesquisar" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="clinetesTableView" layoutY="50.0" prefHeight="550.0" prefWidth="1000.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
         <columns>
-          <TreeTableColumn prefWidth="75.0" text="Nome" />
-            <TreeTableColumn prefWidth="75.0" text="Sobrenome" />
-            <TreeTableColumn prefWidth="75.0" text="Telefone" />
-            <TreeTableColumn prefWidth="75.0" text="Email" />
-            <TreeTableColumn prefWidth="75.0" text="Nif" />
-            <TreeTableColumn prefWidth="163.33331298828125" />
+          <TableColumn fx:id="nomeTableColumn" prefWidth="75.0" text="Nome" />
+          <TableColumn fx:id="sobrenomeTableColumn" prefWidth="75.0" text="Apelido" />
+            <TableColumn fx:id="telefoneTableColumn" prefWidth="75.0" text="Telefone" />
+            <TableColumn fx:id="emailTableColumn" prefWidth="75.0" text="E-mail" />
+            <TableColumn fx:id="nifTableColumn" prefWidth="75.0" text="NIF" />
+            <TableColumn prefWidth="75.0" />
         </columns>
          <columnResizePolicy>
-            <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
-      </TreeTableView>
-      <AnchorPane prefHeight="51.0" prefWidth="1000.0">
+      </TableView>
+      <AnchorPane prefHeight="50.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button layoutX="836.0" layoutY="25.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Adicionar clientes" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="836.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="25.0" />
+            <JFXButton buttonType="RAISED" layoutX="915.0" layoutY="11.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: red;" text="Eliminar" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="25.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="852.0" layoutY="13.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #00FF00;" text="Editar" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="120.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PENCIL_SQUARE_ALT" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>
