@@ -18,7 +18,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import safety.model.dao.ServicoDAO;
@@ -45,7 +47,7 @@ public class ServicosController implements Initializable {
     private TableColumn<Servico, String> colunPeriodo;
     
     @FXML
-    private TableColumn<Servico,  CheckBox> colunElim;
+    private TableColumn<Servico,  Boolean> colunElim;
 
     /*@FXML
     private TableColumn<Servico, Button> colunEdit;*/
@@ -61,7 +63,7 @@ public class ServicosController implements Initializable {
     //classe servicodao que contem os metodos de acesso a base de dados
     
     ServicoDAO sedao = new ServicoDAO();
-    Servico seda = new Servico();
+    //Servico seda = new Servico();
     public static Stage stage = null;
     private static Servico servicos ;
     ObservableList<Servico> lista ;
@@ -69,28 +71,32 @@ public class ServicosController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-            double db=tableview.getFixedCellSize();
-            System.out.println("isso deu erro"+db);
+        
+        
+       /** double db=tableview.getFixedCellSize();
+        System.out.println("isso deu erro"+db);
         for(int i =0; i< db;i++){
-            
     }
         
         CheckBox chekbox = new CheckBox();
-        //lista.add(seda.setCheckbox();
-}
-        //prenxerTabela();
+       lista.add((ObservableList<Servico>) seda.getCheckbox());*/
 
-    
+        prenxerTabela();
+}
+
 
     public void prenxerTabela() {
         
-        colunDTinicio.setCellValueFactory(new PropertyValueFactory("data_inicio"));
-        colunDTtermino.setCellValueFactory(new PropertyValueFactory("data_termino"));
-        colunCusto.setCellValueFactory(new PropertyValueFactory("custo"));
-        colunPeriodo.setCellValueFactory(new PropertyValueFactory("periodo"));
-        colunDescricao.setCellValueFactory(new PropertyValueFactory("descricao"));
-        colunElim.setCellValueFactory(new PropertyValueFactory("checkbox"));
+        colunDTinicio.setCellValueFactory(new PropertyValueFactory<>("data_inicio"));
+        colunDTtermino.setCellValueFactory(new PropertyValueFactory<>("data_termino"));
+        colunCusto.setCellValueFactory(new PropertyValueFactory<>("custo"));
+        colunPeriodo.setCellValueFactory(new PropertyValueFactory<>("periodo"));
+        colunDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+        colunElim.setCellValueFactory(new PropertyValueFactory<>("selected"));
         
+        colunElim.setCellFactory(CheckBoxTableCell.forTableColumn(colunElim));
+        colunDescricao.setCellFactory(TextFieldTableCell.forTableColumn());
+
         tableview.setItems(loadTable());
         getSelectRow();
         getClickNovo();

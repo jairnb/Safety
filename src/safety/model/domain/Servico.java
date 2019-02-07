@@ -1,15 +1,9 @@
 package safety.model.domain;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.CheckBox;
-import javax.swing.JOptionPane;
 
 public class Servico {
 
@@ -21,7 +15,11 @@ public class Servico {
     private float custo;
     private String periodo;
     private int id_cliente;
-    private CheckBox checkbox;
+    private boolean selected ;
+
+    public Servico() {
+        
+    } 
 
    
     
@@ -38,41 +36,19 @@ public class Servico {
         return periodo;
         
     }
-    public static void geralInfoPeriodo(ObservableList<String> olperiodo){
+    public static void geralInfoPeriodo(ObservableList<Servico> olperiodo){
        
      final String[] string = {"fulltime","noturno","diurno"};
     
    
-    ObservableList<String> obs = FXCollections.observableArrayList(string) ;
-    olperiodo = obs;
-     
-     
-     
-      /**  String sql = "select periodo from servico_tbl";
-       Servico per = new Servico();
-        
-        
-        try {
-            ps = conexao.prepareStatement(sql);
-            rs = ps.executeQuery();
-            
-            while(rs.next()){
-                
-                per.setPeriodo(rs.getString("periodo"));*/
-             
-                
-           /** }
-            
-           
-        } catch (SQLException ex) {
-            
-            JOptionPane.showMessageDialog(null,"this is what does goes wrong dude "+ ex);
-        }*/
+    //ObservableList<Servico> obs = FXCollections.observableArrayList(string) ;
+    //olperiodo = obs;
         
     }
-  
-       
     
+       public boolean isSelected() {
+        return selected;
+    }
 
     //todos os metos geters e seters da respetiva classe
     public int getId_servico() {
@@ -131,12 +107,12 @@ public class Servico {
         this.id_cliente = id_cliente;
     }
     
-     public CheckBox getCheckbox() {
-        return checkbox;
+     public boolean getCheckbox() {
+        return selected;
     }
 
-    public void setCheckbox(CheckBox checkbox) {
-        this.checkbox = checkbox;
+    public void setCheckbox(boolean selected) {
+        this.selected = selected;
     }
 
 }

@@ -15,7 +15,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
-import safety.model.database.Database;
 import safety.model.domain.Funcionario;
 import safety.model.domain.Servico;
 
@@ -65,7 +64,7 @@ public class AdicionarServicoController implements Initializable {
 
     ////////////////////////////////////////////////////////
     private ObservableList<String> listaperiodo;
-    Servico selectedservico = new Servico();
+    //Servico selectedservico = new Servico();
     
 
     @Override
@@ -77,7 +76,7 @@ public class AdicionarServicoController implements Initializable {
     //public void initData(Servico servico){
         
         listaperiodo = FXCollections.observableArrayList();
-        Servico.geralInfoPeriodo( listaperiodo);
+        //Servico.geralInfoPeriodo( listaperiodo);
         //selectedservico=servico;
         //txtareaDescricao.setText(selectedservico.getDescricao());
         ComBoxperiodo.setItems(listaperiodo);
