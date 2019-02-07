@@ -1,1 +1,2 @@
-Aplicação -> Azul -> #00AFF0
+#00AFF0  -> Aplicação -> Azul 
+#A4A3A3---> ANCHOR PANE LOGIN
