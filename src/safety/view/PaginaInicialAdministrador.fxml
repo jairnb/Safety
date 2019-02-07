@@ -39,7 +39,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutY="300.0" prefHeight="40.0" prefWidth="200.0" text="Utilizadores  " textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutY="300.0" onAction="#utilizadorClicked" prefHeight="40.0" prefWidth="200.0" text="Utilizadores  " textFill="WHITE">
                <font>
                   <Font name="Roboto" size="16.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutY="250.0" prefHeight="40.0" prefWidth="200.0" ripplerFill="#d72c2c" text="Sevicos " textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutY="250.0" onAction="#servicoClicked" prefHeight="40.0" prefWidth="200.0" ripplerFill="#d72c2c" text="Sevicos " textFill="WHITE">
                <font>
                   <Font name="Roboto" size="16.0" />
                </font>

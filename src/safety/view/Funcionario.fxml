@@ -14,12 +14,12 @@
         <URL value="@/safety/content/app.css" />
     </stylesheets>
    <children>
-      <TreeTableView layoutY="50.0" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+      <TreeTableView fx:id="functable" layoutY="50.0" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
         <columns>
-            <TreeTableColumn prefWidth="146.6666717529297" text="Nome" />
-            <TreeTableColumn prefWidth="253.3333282470703" text="Apelido" />
-          <TreeTableColumn prefWidth="184.3333740234375" text="Telefone" />
-          <TreeTableColumn prefWidth="156.0" text="E-mail" />
+            <TreeTableColumn fx:id="colunNome" prefWidth="146.6666717529297" text="Nome" />
+            <TreeTableColumn fx:id="colunApelido" prefWidth="253.3333282470703" text="Apelido" />
+          <TreeTableColumn fx:id="colunTelefone" prefWidth="184.3333740234375" text="Telefone" />
+          <TreeTableColumn fx:id="colunEmail" prefWidth="156.0" text="E-mail" />
             <TreeTableColumn prefWidth="243.0" />
         </columns>
          <columnResizePolicy>
@@ -36,7 +36,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <TextField layoutX="32.0" layoutY="13.0" />
+            <TextField layoutX="32.0" layoutY="13.0" prefHeight="29.0" prefWidth="153.0" />
          </children>
       </AnchorPane>
    </children>
