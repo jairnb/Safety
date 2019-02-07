@@ -60,4 +60,8 @@ public class PaginaInicialAdministradorController implements Initializable {
 //                
 //            }
 //        });
+    public void clienteoClicked() throws IOException{
+        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/safety/view/Cliente.fxml"));
+        conteudosAnchorPane.getChildren().setAll(a);
+    }
 }
