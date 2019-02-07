@@ -15,7 +15,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
@@ -96,6 +95,7 @@ public class ServicosController implements Initializable {
         
         colunElim.setCellFactory(CheckBoxTableCell.forTableColumn(colunElim));
         colunDescricao.setCellFactory(TextFieldTableCell.forTableColumn());
+        
 
         tableview.setItems(loadTable());
         getSelectRow();
