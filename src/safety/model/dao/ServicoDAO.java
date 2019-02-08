@@ -39,6 +39,7 @@ public class ServicoDAO {
                 servico.setCusto(result.getFloat("custo"));
                 servico.setPeriodo(result.getString("periodo"));
                 servico.setId_cliente(result.getInt("id_cliente"));
+                servico.setCheckbox(false);
 
                 servicos.add( servico);
             }
