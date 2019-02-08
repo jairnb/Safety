@@ -12,8 +12,11 @@ public class Safety extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+
         
         Parent root = FXMLLoader.load(getClass().getResource("/safety/view/Login.fxml"));
+
+       
 
         Scene scene = new Scene(root);
 
