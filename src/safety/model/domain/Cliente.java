@@ -11,7 +11,7 @@ private String sobrenome;
 private int nif;
 private int telefone;
 private String email;
-private Funcionario funcionario;
+//private Funcionario funcionario;
 
 //todos os metos geters e seters da classe cliente
     public int getId_cliente() {
@@ -62,13 +62,13 @@ private Funcionario funcionario;
         this.email = email;
     }
 
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
-
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
-    }
+//    public Funcionario getFuncionario() {
+//        return funcionario;
+//    }
+//
+//    public void setFuncionario(Funcionario funcionario) {
+//        this.funcionario = funcionario;
+//    }
     
     
 

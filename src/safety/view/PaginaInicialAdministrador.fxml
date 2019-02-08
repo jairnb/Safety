@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import java.net.URL?>
 <?import javafx.scene.Cursor?>
@@ -20,11 +21,11 @@
             <Label contentDisplay="CENTER" layoutX="50.0" layoutY="9.0" prefHeight="32.0" prefWidth="117.0" style="-fx-font-size: 20;" stylesheets="@../../../../../../Desktop/NetBeansProjects/SistemaSegurancaEdificios/src/sistemasegurancaedificios/content/app.css" text="SAFETY" AnchorPane.leftAnchor="50.0" />
             <MenuButton layoutX="1138.0" layoutY="10.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="51.0" style="-fx-background-color: #00AFF0;" textFill="#00aff0" AnchorPane.rightAnchor="20.0">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                <MenuItem mnemonicParsing="false" text="Perfil" />
+                <MenuItem mnemonicParsing="false" onAction="#sairClicked" text="Sair" />
               </items>
                <graphic>
-                  <MaterialDesignIconView fill="WHITE" size="15" wrappingWidth="19.0" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="20" />
                </graphic>
             </MenuButton>
          </children>
