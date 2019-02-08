@@ -5,12 +5,15 @@
  */
 package safety.controller;
 
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -18,6 +21,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import safety.model.dao.FuncionarioDAO;
 import safety.model.domain.Funcionario;
+import safety.model.domain.Utilizador;
 
 /**
  *
@@ -38,16 +42,30 @@ public class AdicionarUtilizadorController implements Initializable{
     @FXML
     private TableColumn<Funcionario, String> tabNome;
     
+       @FXML
+    private JFXTextField textFieldSenha;
+        @FXML
+    private TableColumn<Funcionario, String> tabSobrenome;
+
+    @FXML
+    private JFXTextField txtFieldConSenha;
+
+    @FXML
+    private ComboBox<String> comboBoxTipo;
+    
     FuncionarioDAO fundao = new FuncionarioDAO();
     public static Stage stage = null;
     private static Funcionario funcionario ;
-    ObservableList<Funcionario> lista ;
+    ObservableList<String> lista ;
+    
+    ArrayList<String> tipo = new ArrayList<>();
     
     
       @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         prenxerTabela();
+        carregarTipo();
     }  
     
     
@@ -55,6 +73,7 @@ public class AdicionarUtilizadorController implements Initializable{
         
         tabNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         tabID.setCellValueFactory(new PropertyValueFactory<>("id_funcionario"));
+        tabSobrenome.setCellValueFactory(new PropertyValueFactory<>("sobrenome"));
        
         
       
@@ -75,4 +94,16 @@ public class AdicionarUtilizadorController implements Initializable{
             
 
     }
+    
+    public void carregarTipo(){
+        
+        tipo.add("Administrador");
+        tipo.add("Agente");
+        tipo.add("Secretária");
+        
+        lista = FXCollections.observableArrayList(tipo);
+        
+        comboBoxTipo.setItems(lista);
+        
+   }
 }

@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="AnchorPaneUtilizador" prefHeight="650.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="safety.controller.UtilizadorController">
+<AnchorPane id="AnchorPane" fx:id="AnchorPaneUtilizador" prefHeight="650.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="safety.controller.UtilizadorController">
     <stylesheets>
         <URL value="@/safety/content/app.css" />
     </stylesheets>
    <children>
       <AnchorPane prefHeight="50.0" prefWidth="1000.0">
          <children>
-            <JFXButton fx:id="btnUser" layoutX="878.0" layoutY="12.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #00AFF0;" text=" Utilizador" textFill="WHITE">
+            <JFXButton fx:id="btnUser" buttonType="RAISED" layoutX="878.0" layoutY="12.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #00AFF0;" text=" Utilizador" textFill="WHITE">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="15" />
                </graphic>
