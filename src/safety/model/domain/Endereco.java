@@ -9,6 +9,29 @@ public class Endereco {
     private String latitude;
     private String longitude;
     private int id_servico;
+    private Servico servico;
+
+    public Endereco(String ilha, String cidade, String zona, int id_servico) {
+        this.ilha = ilha;
+        this.cidade = cidade;
+        this.zona = zona;
+        this.id_servico = id_servico;
+    }
+
+    public Endereco() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Servico getServico() {
+        return servico;
+    }
+
+    public void setServico(Servico servico) {
+        this.servico = servico;
+    }
+    
+      
+    
 
     public int getId_endereco() {
         return id_endereco;

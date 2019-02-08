@@ -28,7 +28,7 @@ public class FuncionarioDAO {
 
             result = ps.executeQuery();
 
-            if (result.next()) {
+           while(result.next()) {
 
                 funcionario.setId_funcionario(result.getInt("id_funcionario"));
                 funcionario.setNome(result.getString("nome"));
@@ -187,4 +187,46 @@ public class FuncionarioDAO {
         return funcionarioRetorno;
 
     }
+    
+       public List<Funcionario> listarAgentes() {
+
+        //PreparedStatement ps = null;
+        //ResultSet result = null;
+        
+
+        String sql = "SELECT funcionario_tbl.nome,funcionario_tbl.sobrenome,funcionario_tbl.telefone,funcionario_tbl.cidade\n"
+                + "FROM funcionario_tbl\n"
+                + "INNER JOIN utilizador_tbl ON funcionario_tbl.id_funcionario = utilizador_tbl.id_funcionario\n"
+                + "where utilizador_tbl.tipo like \"Agente\" and utilizador_tbl.estado like \"ativo\";";
+        
+        List<Funcionario> funcionarios = new ArrayList<>();
+
+        try {
+
+           ps = cnn.prepareStatement(sql);
+             result = ps.executeQuery();
+
+            while (result.next()) {
+
+                Funcionario funcionario = new Funcionario();
+
+               
+                funcionario.setNome(result.getString("nome"));
+                funcionario.setSobrenome(result.getString("sobrenome"));
+                funcionario.setTelefone(result.getInt("telefone"));
+                funcionario.setCidade(result.getString("cidade"));
+                funcionario.setSelected(false);
+                
+
+                funcionarios.add(funcionario);
+
+            }
+        } catch (SQLException ex) {
+
+            JOptionPane.showMessageDialog(null, "this's what does go wrong " + ex);
+        }
+        return funcionarios;
+    }
+
+
 }

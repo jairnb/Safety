@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import safety.model.database.Database;
+import safety.model.domain.Cliente;
+import safety.model.domain.Funcionario;
 import safety.model.domain.Servico;
 
 public class ServicoDAO {
@@ -16,8 +18,8 @@ public class ServicoDAO {
     Connection cnn = Database.getConnection();
     PreparedStatement ps = null;
     ResultSet result = null;
+    ClienteDAO clientedao = new ClienteDAO();
 
-   
     public List<Servico> listarServico() {
 
         String sql = "SELECT * FROM servico_tbl";
@@ -31,6 +33,7 @@ public class ServicoDAO {
             while (result.next()) {
 
                 Servico servico = new Servico();
+                Cliente cliente = new Cliente();
 
                 servico.setId_servico(result.getInt("id_servico"));
                 servico.setData_inicio(result.getDate("data_inicio").toLocalDate());
@@ -38,10 +41,15 @@ public class ServicoDAO {
                 servico.setData_termino(result.getDate("data_termino").toLocalDate());
                 servico.setCusto(result.getFloat("custo"));
                 servico.setPeriodo(result.getString("periodo"));
-                servico.setId_cliente(result.getInt("id_cliente"));
+                //servico.setId_cliente(result.getInt("id_cliente"));
+                cliente.setId_cliente(result.getInt("id_cliente"));
+                cliente = clientedao.selecionarCliente(cliente);
+
+                servico.setCliente(cliente);
+
                 servico.setCheckbox(false);
 
-                servicos.add( servico);
+                servicos.add(servico);
             }
         } catch (SQLException ex) {
 
@@ -70,13 +78,21 @@ public class ServicoDAO {
         String sql = "INSERT INTO servico_tbl(data_inicio,descricao,data_termino,custo,periodo,id_cliente) VALUES(?,?,?,?,?,?)";
         try {
             ps = cnn.prepareStatement(sql);
+            Cliente cliente = new Cliente();
 
             ps.setDate(1, Date.valueOf(servico.getData_inicio()));
             ps.setString(2, servico.getDescricao());
             ps.setDate(3, Date.valueOf(servico.getData_termino()));
             ps.setFloat(4, servico.getCusto());
             ps.setString(5, servico.getPeriodo());
-            ps.setInt(6, servico.getId_cliente());
+           // ps.setInt(6, servico.getId_cliente());
+            ps.setInt(6,servico.getCliente().getId_cliente());
+           
+             /**cliente.setId_cliente(result.getInt("id_cliente"));
+                cliente = clientedao.selecionarCliente(cliente);
+
+                servico.setCliente(cliente);*/
+            
 
             ps.execute();
 

@@ -1,9 +1,7 @@
 package safety.model.domain;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.time.LocalDate;
-import javafx.collections.ObservableList;
+import java.util.List;
 
 public class Servico {
 
@@ -15,39 +13,76 @@ public class Servico {
     private float custo;
     private String periodo;
     private int id_cliente;
+    private Cliente cliente;
+    private Endereco endereco;
+    private Prestar prestar;
+    private Evento eventos;
+    private List<Funcionario> listadeagentes;
     private boolean selected ;
+    //private CheckBox checkbox;
 
     public Servico() {
-        
-    } 
-
-   
+    }
     
-    //inicializando as variaveis que permitem o acesso e as informacao da base de dados
-      static PreparedStatement ps = null;
-      static ResultSet rs = null;
-        
+
+    public Servico(LocalDate data_inicio, String descricao, LocalDate data_termino, float custo,String periodo,Cliente cliente) {
+        this.data_inicio = data_inicio;
+        this.descricao = descricao;
+        this.data_termino = data_termino;
+        this.custo = custo;
+        this.periodo = periodo;
+        this.cliente = cliente;
+    }
+    
+    
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Prestar getPrestar() {
+        return prestar;
+    }
+
+    public void setPrestar(Prestar prestar) {
+        this.prestar = prestar;
+    }
+
+    public Evento getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(Evento eventos) {
+        this.eventos = eventos;
+    }
+
+    public List<Funcionario> getListadeagentes() {
+        return listadeagentes;
+    }
+
+    public void setListadeagentes(List<Funcionario> listadeagentes) {
+        this.listadeagentes = listadeagentes;
+    }
+ 
     
     //overide o metodo tostring para preencher o comboboxPeriodo 
-    
     @Override
     public String toString(){
                
         return periodo;
         
-    }
-    public static void geralInfoPeriodo(ObservableList<Servico> olperiodo){
-       
-     final String[] string = {"fulltime","noturno","diurno"};
-    
-   
-    //ObservableList<Servico> obs = FXCollections.observableArrayList(string) ;
-    //olperiodo = obs;
-        
-    }
-    
-       public boolean isSelected() {
-        return selected;
     }
 
     //todos os metos geters e seters da respetiva classe
@@ -107,12 +142,18 @@ public class Servico {
         this.id_cliente = id_cliente;
     }
     
+    
      public boolean getCheckbox() {
         return selected;
     }
 
     public void setCheckbox(boolean selected) {
         this.selected = selected;
+    }
+    
+     
+    public void detalharServico(){
+        
     }
 
 }

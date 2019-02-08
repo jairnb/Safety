@@ -1,6 +1,13 @@
 package safety.model.domain;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 public class Funcionario {
 
@@ -12,6 +19,17 @@ public class Funcionario {
     private String cidade;
     private LocalDate data_nasc;
     private String zona;
+    private boolean selected ;
+
+    public boolean getSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
+    
+    
 
     public int getId_funcionario() {
         return id_funcionario;
@@ -76,6 +94,5 @@ public class Funcionario {
     public void setZona(String zona) {
         this.zona = zona;
     }
-    
 
 }

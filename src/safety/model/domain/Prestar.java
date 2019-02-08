@@ -4,8 +4,26 @@ public class Prestar {
 
     private int id_funcionario;
     private int id_servico;
+    private Funcionario funcionario;
+    private Servico servico;
     private String turno;
 
+    public Prestar(int id_funcionario, int id_servico, String turno) {
+        this.id_funcionario = id_funcionario;
+        this.id_servico = id_servico;
+        this.turno = turno;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+
+ 
+    
     public int getId_funcionario() {
         return id_funcionario;
     }
@@ -29,7 +47,12 @@ public class Prestar {
     public void setTurno(String turno) {
         this.turno = turno;
     }
-    
+     @Override
+    public String toString(){
+               
+        return turno;
+        
+    }
     
 
 }

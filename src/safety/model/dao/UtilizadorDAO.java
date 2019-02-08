@@ -27,7 +27,7 @@ public class UtilizadorDAO {
 
             result = ps.executeQuery();
 
-            if (result.next()) {
+            while(result.next()) {
 
                 utilizador.setId_utilizador(result.getInt("id_utilizador"));
                 utilizador.setTipo(result.getString("tipo"));
