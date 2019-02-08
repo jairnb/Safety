@@ -69,7 +69,12 @@ public class PaginaInicialAdministradorController implements Initializable {
         conteudosAnchorPane.getChildren().setAll(a);
     }
     public void utilizadorClicked() throws IOException{
-        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/safety/view/Utilizador.fxml"));
+        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/safety/view/utilizador.fxml"));
         conteudosAnchorPane.getChildren().setAll(a);
+    }
+    
+    public void sairClicked() throws IOException{
+        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/safety/view/Login.fxml"));
+        PaginaIniciaAnchorPane.getChildren().setAll(a);
     }
 }

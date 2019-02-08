@@ -1,5 +1,7 @@
 package safety.model.database;
 
+
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,9 +12,18 @@ import javax.swing.JOptionPane;
 public class Database {
 
     private static final String USER = "root";
+<<<<<<< HEAD
     private static final String PASS = "mariaejose001++";
     private static final String URL = "jdbc:mysql://localhost:3306/gpi2019_db";
+=======
+    private static final String PASS = "";
+//    private static final String URL = "jdbc:mysql://localhost:3306/gpi2019_db";
+>>>>>>> c027ca1076d5df97ffb4bf13dcf55880c7558f6a
     //private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+
+    private static final String URL = "jdbc:mysql://localhost:3306/gpi2019_db?useTimezone=true&serverTimezone=UTC";
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+
 
     // Conectar ao banco
     public static Connection getConnection() {

@@ -21,13 +21,13 @@ public class ClienteDAO {
     Connection cnn = Database.getConnection();
     PreparedStatement ps = null;
     ResultSet result = null;
-    FuncionarioDAO funcionarioDAO;
+    //FuncionarioDAO funcionarioDAO;
     
     public List<Cliente> listarCliente() {
 
         String sql = "SELECT * FROM cliente_tbl";
         List<Cliente> clientes = new ArrayList<>();
-        funcionarioDAO = new FuncionarioDAO();
+        //funcionarioDAO = new FuncionarioDAO();
 
         try {
 
@@ -35,7 +35,7 @@ public class ClienteDAO {
             result = ps.executeQuery();
 
             while (result.next()) {
-                Funcionario funcionario = new Funcionario();
+                //Funcionario funcionario = new Funcionario();
                 Cliente cliente = new Cliente();
                 
                 cliente.setId_cliente(result.getInt("id_cliente"));
@@ -45,10 +45,10 @@ public class ClienteDAO {
                 cliente.setNif(result.getInt("nif"));
                 cliente.setEmail(result.getString("email"));
                 
-                funcionario.setId_funcionario(result.getInt("id_funcionario"));
-                funcionario = funcionarioDAO.selecionarFuncionario(funcionario);
+               // funcionario.setId_funcionario(result.getInt("id_funcionario"));
+                //funcionario = funcionarioDAO.selecionarFuncionario(funcionario);
                 
-                cliente.setFuncionario(funcionario);
+                //cliente.setFuncionario(funcionario);
 
                 clientes.add( cliente);
             }
@@ -113,4 +113,52 @@ public class ClienteDAO {
     }
 
     
+    public boolean removerCliente(Cliente cliente){
+        String sql = "DELETE FROM cliente_tbl WHERE id_cliente=?";
+        try {
+            PreparedStatement stmt = cnn.prepareStatement(sql);
+            stmt.setInt(1,cliente.getId_cliente());
+            stmt.execute();
+            return true;
+        } catch (SQLException ex) {
+            //Logger.getLogger(UtilizadorDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+    
+    public boolean adicoanarCliente(Cliente cliente){
+        String sql = "INSERT INTO cliente_tbl(nome, sobrenome, telefone, nif, email) VALUES(?,?,?,?,?)";        
+        try{
+            PreparedStatement stmt = cnn.prepareStatement(sql);
+            stmt.setString(1, cliente.getNome());
+            stmt.setString(2, cliente.getSobrenome());
+            stmt.setInt(3, cliente.getTelefone());
+            stmt.setInt(4, cliente.getNif());
+            stmt.setString(5, cliente.getEmail());
+            //stmt.setInt(3, cliente.getFuncionario().getId_funcionario());
+            stmt.execute();           
+            return true;
+        }catch(SQLException ex){
+            //Logger.getLogger(UtilizadorDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+    
+    public boolean editarCliente(Cliente cliente){
+        String sql = "UPDATE cliente_tbl SET nome=?, sobrenome=?, telefone=?, nif=?, email=? WHERE id_cliente=?";        
+        try{
+            PreparedStatement stmt = cnn.prepareStatement(sql);
+            stmt.setString(1, cliente.getNome());
+            stmt.setString(2, cliente.getSobrenome());
+            stmt.setInt(3, cliente.getTelefone());
+            stmt.setInt(4, cliente.getNif());
+            stmt.setString(5, cliente.getEmail());
+            //stmt.setInt(3, cliente.getFuncionario().getId_funcionario());
+            stmt.execute();           
+            return true;
+        }catch(SQLException ex){
+            //Logger.getLogger(UtilizadorDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
 }

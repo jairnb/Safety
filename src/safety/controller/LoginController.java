@@ -50,8 +50,7 @@ public class LoginController implements Initializable {
          btnentrar.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent k) {
-                if(k.getCode()==KeyCode.ENTER){
-                    
+                if(k.getCode()==KeyCode.ENTER){                    
                     try {
                         login();
                     } catch (IOException ex) {
@@ -74,6 +73,25 @@ public class LoginController implements Initializable {
             }
         });
         
+        txtnomeutilizador.setOnKeyPressed(e -> {
+            if(e.getCode() == KeyCode.ENTER){
+                try {
+                    login();
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(null, "Nome ou Senha Invalido " + ex);
+                }
+            }
+        });
+        
+        txtsenha.setOnKeyPressed(e -> {
+            if(e.getCode() == KeyCode.ENTER){
+                try {
+                    login();
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(null, "Nome ou Senha Invalido " + ex);
+                }
+            }
+        });
        
     }
 
@@ -94,14 +112,22 @@ public class LoginController implements Initializable {
                 userAtucalLogado = utilizador;
 
                 if (utilizador.getEstado().equals("ativo")) {
-                    //JOptionPane.showMessageDialog(null, "Utilizador valido");
-                    AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/safety/view/PaginaInicialAdministrador.fxml"));
-                    Scene sc = new Scene(a);
-                    Stage st = new Stage();
-                    st.setScene(sc);
-                    st.show();
-                    Safety.stage.close();
-
+                    if(utilizador.getTipo().equals("Administrador")){
+                        //JOptionPane.showMessageDialog(null, "Utilizador valido");
+                        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/safety/view/PaginaInicialAdministrador.fxml"));
+                        Scene sc = new Scene(a);
+                        Stage st = new Stage();
+                        st.setScene(sc);
+                        st.show();
+                        Safety.stage.close();                        
+                    }else if(utilizador.getTipo().equals("Secretaria")){
+                        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/safety/view/PaginaInicialSecretaria.fxml"));
+                        Scene sc = new Scene(a);
+                        Stage st = new Stage();
+                        st.setScene(sc);
+                        st.show();
+                        Safety.stage.close(); 
+                    }  
                 } else {
                     JOptionPane.showMessageDialog(null, "Nome ou Senha Invalido");
                 }

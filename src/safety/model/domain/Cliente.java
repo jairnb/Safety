@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 public class Cliente {
 
 //todos os atributos da classe cliente    
+<<<<<<< HEAD
     private int id_cliente;
     private String nome;
     private String sobrenome;
@@ -19,6 +20,15 @@ public class Cliente {
     private int telefone;
     private String email;
     private Funcionario funcionario;
+=======
+private int id_cliente;
+private String nome;
+private String sobrenome;
+private int nif;
+private int telefone;
+private String email;
+//private Funcionario funcionario;
+>>>>>>> c027ca1076d5df97ffb4bf13dcf55880c7558f6a
 
 //todos os metos geters e seters da classe cliente
     public int getId_cliente() {
@@ -69,6 +79,7 @@ public class Cliente {
         this.email = email;
     }
 
+<<<<<<< HEAD
     public Funcionario getFuncionario() {
         return funcionario;
     }
@@ -76,6 +87,17 @@ public class Cliente {
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
+=======
+//    public Funcionario getFuncionario() {
+//        return funcionario;
+//    }
+//
+//    public void setFuncionario(Funcionario funcionario) {
+//        this.funcionario = funcionario;
+//    }
+    
+    
+>>>>>>> c027ca1076d5df97ffb4bf13dcf55880c7558f6a
 
     @Override
     public String toString() {

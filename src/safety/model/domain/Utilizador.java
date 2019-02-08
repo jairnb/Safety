@@ -9,6 +9,27 @@ public class Utilizador {
     private String estado;
     private int id_funcionario;
 
+    public Utilizador(String nomeutilizador, String senha, String tipo, String estado, int id_funcionario) {
+        this.nomeutilizador = nomeutilizador;
+        this.senha = senha;
+        this.tipo = tipo;
+        this.estado = estado;
+        this.id_funcionario = id_funcionario;
+    }
+
+    public Utilizador() {
+    }
+    
+    
+
+    
+
+    
+
+   
+
+  
+
     public int getId_utilizador() {
         return id_utilizador;
     }
@@ -56,5 +77,11 @@ public class Utilizador {
     public void setId_funcionario(int id_funcionario) {
         this.id_funcionario = id_funcionario;
     }
+
+    @Override
+    public String toString() {
+        return getTipo();
+    }
+    
 
 }

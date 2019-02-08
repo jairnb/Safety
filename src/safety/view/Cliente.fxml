@@ -16,7 +16,7 @@
    <children>
       <AnchorPane prefHeight="50.0" prefWidth="1000.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="898.0" layoutY="13.0" style="-fx-background-color: #00AFF0;" text="Adicionar Cliente" textFill="WHITE" AnchorPane.rightAnchor="30.0">
+            <JFXButton buttonType="RAISED" layoutX="898.0" layoutY="13.0" onAction="#adicionarCliente" style="-fx-background-color: #00AFF0;" text="Adicionar Cliente" textFill="WHITE" AnchorPane.rightAnchor="20.0">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20" />
                </graphic>
@@ -42,7 +42,7 @@
       </TableView>
       <AnchorPane prefHeight="50.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="915.0" layoutY="11.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: red;" text="Eliminar" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="25.0">
+            <JFXButton buttonType="RAISED" layoutX="915.0" layoutY="11.0" onAction="#removerCliente" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: red;" text="Eliminar" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="25.0">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
                </graphic>
@@ -50,7 +50,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="852.0" layoutY="13.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #00FF00;" text="Editar" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="120.0">
+            <JFXButton layoutX="852.0" layoutY="13.0" onAction="#editarCliente" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #00FF00;" text="Editar" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="120.0">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="PENCIL_SQUARE_ALT" />
                </graphic>
